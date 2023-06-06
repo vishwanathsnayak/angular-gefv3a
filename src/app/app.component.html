@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="formInput">
+    <label for="userName">UserName</label>
+    <input type="text" id="userName" [(ngModel)]="userName" />
+  </div>
+  <div class="formInput">
+    <label for="password">Password</label>
+    <input type="text" id="password" [(ngModel)]="password" />
+    <span
+      class="toolTip"
+      (mouseenter)="showTooltip = true"
+      (mouseleave)="showTooltip = false"
+      >i</span
+    >
+  </div>
+  <div>
+    <button (click)="login()">Login</button>
+    <button (click)="reset()">Reset</button>
+  </div>
+  <div class="toolTipText" *ngIf="showTooltip">
+    Password should be minimum 8 character long.
+  </div>
+</div>
+<div *ngIf="loggedIn">
+  <p>Entered user name : {{ userName }}</p>
+  <p>Entered password : {{ password }}</p>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
